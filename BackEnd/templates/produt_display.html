@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+{% extends 'index.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="card-box mb-30">
+				<h2 class="h4 pd-20">Best Selling Products</h2>
+				<div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+					<div class="row">
+						<div class="col-sm-12 col-md-6"></div>
+						<div class="col-sm-12 col-md-6"></div></div>
+					<div class="row">
+					<div class="col-sm-12">
+						<table class="data-table table nowrap dataTable no-footer dtr-inline collapsed" id="DataTables_Table_0" role="grid" style="width: 1156px;">
+					<thead>
+						<tr role="row">
+							<th class="table-plus datatable-nosort sorting_asc" rowspan="1" colspan="1" style="width: 136px;" aria-label="Product"> P_image</th>
+							<th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 104px;" aria-label="Color: activate to sort column ascending">Product_Name</th>
+							<th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 236px;" aria-label="Name: activate to sort column ascending">P_price</th>
+							<th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 104px;" aria-label="Color: activate to sort column ascending">Desicription</th>
+<!--							<th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 89px;" aria-label="Size: activate to sort column ascending">Size</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 101px;" aria-label="Price: activate to sort column ascending">Price</th><th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" style="width: 81px; display: none;" aria-label="Oty: activate to sort column ascending">Oty</th><th class="datatable-nosort sorting_disabled" rowspan="1" colspan="1" style="width: 105px; display: none;" aria-label="Action">Action</th>-->
+					</tr>
+					</thead>
+					<tbody>
+					{% for i in data %}
+				<tr role="row" class="odd">
+							 <td><img src="{{i.P_image.url}}" ></td>
+                            <td>{{i.Category}}</td>
+							<td>{{P_Name}}</td>
+                            <td>{{i.P_price}}</td>
+							<td>{{i.Desicription}}</td>
+
+
+
+
+					 <td>
+<!--            <img src="{{i.C_image.url}}" >-->
+        </td>
+					<td>
+						<a href="{% url 'Edit_product' pro_id=i.id %}">
+							<button type="button" class="btn btn-dark">Edit</button>
+						</a>
+						<a href="#">
+							<button type="button" class="btn btn-dark">Delete</button>
+						</a>
+					</td>
+<!--							<td>Black</td>-->
+<!--							<td>M</td>-->
+<!--							<td>$1000</td>-->
+<!--							<td style="display: none;">1</td>-->
+<!--							<td style="display: none;">-->
+<!--								<div class="dropdown">-->
+<!--									<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">-->
+<!--										<i class="dw dw-more"></i>-->
+<!--									</a>-->
+<!--									<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">-->
+<!--										<a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>-->
+<!--										<a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a>-->
+<!--										<a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i> Delete</a>-->
+<!--									</div>-->
+<!--								</div>-->
+<!--							</td>-->
+<!--						</tr><tr role="row" class="even">-->
+<!--							<td class="table-plus sorting_1" tabindex="0">-->
+<!--								<img src="vendors/images/product-2.jpg" width="70" height="70" alt="">-->
+<!--							</td>-->
+<!--							<td>-->
+<!--								<h5 class="font-16">Boots</h5>-->
+<!--								by Lea R. Frith-->
+<!--							</td>-->
+<!--							<td>brown</td>-->
+<!--							<td>9UK</td>-->
+<!--							<td>$900</td>-->
+<!--							<td style="display: none;">1</td>-->
+<!--							<td style="display: none;">-->
+<!--								<div class="dropdown">-->
+<!--									<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">-->
+<!--										<i class="dw dw-more"></i>-->
+<!--									</a>-->
+<!--									<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">-->
+<!--										<a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>-->
+<!--										<a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a>-->
+<!--										<a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i> Delete</a>-->
+<!--									</div>-->
+<!--								</div>-->
+<!--							</td>-->
+<!--						</tr><tr role="row" class="odd">-->
+<!--							<td class="table-plus sorting_1" tabindex="0">-->
+<!--								<img src="vendors/images/product-3.jpg" width="70" height="70" alt="">-->
+<!--							</td>-->
+<!--							<td>-->
+<!--								<h5 class="font-16">Hat</h5>-->
+<!--								by Erik L. Richards-->
+<!--							</td>-->
+<!--							<td>Orange</td>-->
+<!--							<td>M</td>-->
+<!--							<td>$100</td>-->
+<!--							<td style="display: none;">4</td>-->
+<!--							<td style="display: none;">-->
+<!--								<div class="dropdown">-->
+<!--									<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">-->
+<!--										<i class="dw dw-more"></i>-->
+<!--									</a>-->
+<!--									<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">-->
+<!--										<a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>-->
+<!--										<a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a>-->
+<!--										<a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i> Delete</a>-->
+<!--									</div>-->
+<!--								</div>-->
+<!--							</td>-->
+<!--						</tr><tr role="row" class="even">-->
+<!--							<td class="table-plus sorting_1" tabindex="0">-->
+<!--								<img src="vendors/images/product-4.jpg" width="70" height="70" alt="">-->
+<!--							</td>-->
+<!--							<td>-->
+<!--								<h5 class="font-16">Long Dress</h5>-->
+<!--								by Renee I. Hansen-->
+<!--							</td>-->
+<!--							<td>Gray</td>-->
+<!--							<td>L</td>-->
+<!--							<td>$1000</td>-->
+<!--							<td style="display: none;">1</td>-->
+<!--							<td style="display: none;">-->
+<!--								<div class="dropdown">-->
+<!--									<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">-->
+<!--										<i class="dw dw-more"></i>-->
+<!--									</a>-->
+<!--									<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">-->
+<!--										<a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>-->
+<!--										<a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a>-->
+<!--										<a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i> Delete</a>-->
+<!--									</div>-->
+<!--								</div>-->
+<!--							</td>-->
+<!--						</tr><tr role="row" class="odd">-->
+<!--							<td class="table-plus sorting_1" tabindex="0">-->
+<!--								<img src="vendors/images/product-5.jpg" width="70" height="70" alt="">-->
+<!--							</td>-->
+<!--							<td>-->
+<!--								<h5 class="font-16">Blazer</h5>-->
+<!--								by Vicki M. Coleman-->
+<!--							</td>-->
+<!--							<td>Blue</td>-->
+<!--							<td>M</td>-->
+<!--							<td>$1000</td>-->
+<!--							<td style="display: none;">1</td>-->
+<!--							<td style="display: none;">-->
+<!--								<div class="dropdown">-->
+<!--									<a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">-->
+<!--										<i class="dw dw-more"></i>-->
+<!--									</a>-->
+<!--									<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">-->
+<!--										<a class="dropdown-item" href="#"><i class="dw dw-eye"></i> View</a>-->
+<!--										<a class="dropdown-item" href="#"><i class="dw dw-edit2"></i> Edit</a>-->
+<!--										<a class="dropdown-item" href="#"><i class="dw dw-delete-3"></i> Delete</a>-->
+<!--									</div>-->
+<!--								</div>-->
+<!--							</td>-->
+						</tr>
+						 {% endfor %}
+					</tbody>
+				</table></div></div><div class="row"><div class="col-sm-12 col-md-5"></div><div class="col-sm-12 col-md-7"></div></div></div>
+			</div>
+</body>
+</html>
+{% endblock %}
